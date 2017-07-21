@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+          <meta name="viewport" content="width=device-width, initial-scale=1"/>
+          <title>By The 5lice</title>
+
+  <!-- CSS  -->
+          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+          <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+          <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    </head>
+    
+    <body>
+      <nav>
+    <form method="POST" action="/home">
+    <div class="nav-wrapper black">
+      <div class="col s12" id = "stuff">
+        <a href= "" class="breadcrumb">Back To Home</a>
+        <a class="breadcrumb">Results For <%= @neighborhood %></a>
+      </div>
+    </div>
+    </form>
+  </nav>
+  
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <a id="logo-container" href="#" class="brand-logo">By The 5lice</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#"></a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  
+  
+<div class="row">
+  <% for i in 0..11 do %>
+		<div class="col s4">
+				<div class="card medium">
+				  
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src = "<%= @image[i] %>">
+          </div>
+          
+          <div class="card-content">
+            <span class="card-title activator grey-text text-darken-4"><%=@names[i]%></span>
+             <p>Rating: <%= @rating[i] %></p> 
+  		          <p> <%= @price[i] %> </p>
+  		          <p> <%= @location1[i] + " " + @location2[i] %></p>
+  		          <p> <%= @phone_number[i] %></p>
+          </div>
+          
+          <div class="card-reveal">
+            <span class="card-title black-text text-darken-4 activator" ><%@names[i]%></span>
+  		    </div>
+  		    
+        </div>        
+    </div>
+            <% if i == 2 || i == 5 || i== 8 || i == 11%>
+              <!--</div>-->
+              <div class = "row">
+              <% end %>
+
+		        <% end %>
+</div>
+
+      <script>
+        $( document ).ready(function(){
+          
+          $(".card").sideNav();
+          
+        })
+        
+        
+      </script>
+      
+    
+    </body>
+    
+    <!--<body id="output">-->
+        
+
+    
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">2. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">3. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">4. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">5. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">6. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">7. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">8. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">9. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    <!--    <div class="card">-->
+    <!--    <div class="card-image waves-effect waves-block waves-light">-->
+    <!--      <img class="activator" src="images/pizza_background2.jpg">-->
+    <!--    </div>-->
+    <!--    <div class="card-content">-->
+    <!--      <span class="card-title activator grey-text text-darken-4">10. THE NAME <i class="material-icons right">more_vert</i></span>-->
+    <!--      <p><a href="#">This is a link</a></p>-->
+    <!--    </div>-->
+    <!--    <div class="card-reveal">-->
+    <!--      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>-->
+    <!--      <p>This is _______. They have good pizza.</p>-->
+    <!--    </div>-->
+    <!--</div>-->
+    
+    
+
+
+
+    </body>
+    
+</html>
